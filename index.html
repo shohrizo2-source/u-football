@@ -39,7 +39,7 @@ for(let i=0;i<10;i++)box(scene,8,.035,42,i%2?stripe1:stripe2,-36+i*8,.01,0);
 const pitchLines=mat('#e5f2dd');box(scene,42,.045,.12,pitchLines,0,.07,0);box(scene,42,.045,.12,pitchLines,0,.07,-32);box(scene,.12,.045,32,pitchLines,-21,.07,-16);box(scene,.12,.045,32,pitchLines,21,.07,-16);
 const circle=new THREE.Mesh(new THREE.TorusGeometry(4.1,.035,6,90),pitchLines);circle.rotation.x=Math.PI/2;circle.position.set(0,.09,-16);scene.add(circle);sphere(scene,.09,pitchLines,0,.1,-16);
 box(scene,20,.045,.12,pitchLines,0,.08,-7);box(scene,.12,.045,9,pitchLines,-10,.08,-11.5);box(scene,.12,.045,9,pitchLines,10,.08,-11.5);
-box(scene,12,.045,.12,pitchLines,0,.08,-3.5);box(scene,.12,.045,3.5,-6,.08,-5.25);box(scene,.12,.045,3.5,6,.08,-5.25);
+box(scene,12,.045,.12,pitchLines,0,.08,-3.5);box(scene,.12,.045,3.5,pitchLines,-6,.08,-5.25);box(scene,.12,.045,3.5,pitchLines,6,.08,-5.25);
 function makeGoal(){const g=new THREE.Group();const post=mat('#f8fff4',.35,.12);box(g,.22,3.4,.22,post,-5.2,1.7,-32);box(g,.22,3.4,.22,post,5.2,1.7,-32);box(g,10.5,.22,.22,post,0,3.35,-32);for(let i=-4.8;i<=4.81;i+=.8)line(g,[[i,0,-32],[i,3.25,-32]],white,.012);for(let y=.4;y<3.2;y+=.45)line(g,[[-5.1,y,-32],[5.1,y,-32]],white,.012);scene.add(g)}makeGoal();
 // stadium stands, colored seats and floodlight towers
 for(const side of [-1,1]){for(let tier=0;tier<4;tier++){const stand=box(scene,45,1.0,2.1,mat(tier%2?'#344b53':'#263d47'),0,1.1+tier*.9,side*(22+tier*.25));stand.rotation.x=side*.04;for(let n=0;n<58;n++){const colors=['#d1e4dd','#d9b65c','#e46b5c','#75b8d9','#f0f1e5'];box(scene,.34,.38,.26,mat(colors[(n+tier*7)%colors.length]),-21.5+n*.75,1.8+tier*.9,side*21.6)}}const tower=box(scene,.35,13,.35,white,side*24,6,-23);box(scene,2,.55,.5,white,side*24,12.8,-23)}
