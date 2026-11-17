@@ -2,6 +2,9 @@
 <html lang="uz">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10152a">
+<meta name="description" content="NOVA — zamonaviy 3D uslubidagi messenjer.">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/svg+xml" href="./nova-icon.svg">
 <title>NOVA — 3D Messenger</title>
 <style>
 :root{--bg:#0b1020;--panel:#111a30;--panel2:#17223b;--line:#263453;--text:#f4f7ff;--muted:#94a4c5;--blue:#6b8cff;--cyan:#66e3ff;--bubble:#202f50;--mine:#3e62cc}
@@ -33,4 +36,5 @@ $('input').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.pre
 $('input').addEventListener('input',()=>{$('input').style.height='auto';$('input').style.height=Math.min($('input').scrollHeight,120)+'px'});
 $('search').addEventListener('input',renderContacts);document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));renderContacts()});
 $('emoji').onclick=()=>{const input=$('input');input.value+=[' 😊',' ❤️',' ✨',' 😂',' 👍'][Math.floor(Math.random()*5)];input.focus()};$('back').onclick=()=>$('app').classList.remove('chatopen');$('contactsBtn').onclick=()=>notice('Kontaktlar roʻyxati shu oynada');choose('madina');
-</script></body></html>
+</script><script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}</script>
+</body></html>
