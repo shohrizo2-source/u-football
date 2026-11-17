@@ -1,0 +1,20 @@
+{
+  "name": "NOVA 3D Messenger",
+  "short_name": "NOVA",
+  "description": "NOVA — zamonaviy 3D uslubidagi messenjer.",
+  "lang": "uz",
+  "start_url": "./messenger.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#10152a",
+  "background_color": "#0b1020",
+  "icons": [
+    {
+      "src": "./nova-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
